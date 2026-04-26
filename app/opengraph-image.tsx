@@ -42,16 +42,16 @@ export default function OpenGraphImage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 22, maxWidth: 900 }}>
-          <div style={{ fontSize: 86, lineHeight: 1.02, fontWeight: 700 }}>Where Nature Meets Culinary Craft</div>
+          <div style={{ fontSize: 86, lineHeight: 1.02, fontWeight: 700 }}>Doğanın Zarafetiyle Şekillenen Lezzet Deneyimi</div>
           <div style={{ fontSize: 34, lineHeight: 1.35, color: "#d5ccbf" }}>
-            Premium cafe, restaurant and bakery experience with terrace dining, botanical cocktails, and fast Google Maps directions.
+            Teras keyfi, botanik kokteyller ve Google Haritalar ile kolay ulaşım sunan premium kafe, restoran ve fırın deneyimi.
           </div>
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: 28, color: "#d5ccbf" }}>
             <div>128 Greenhouse Lane, London</div>
-            <div>Stone oven, terrace, bakery, private reservations</div>
+            <div>Taş fırın, teras, fırın lezzetleri, özel rezervasyonlar</div>
           </div>
           <div
             style={{
@@ -66,7 +66,7 @@ export default function OpenGraphImage() {
               letterSpacing: 3,
             }}
           >
-            Google Maps Ready
+            Google Haritalar Hazır
           </div>
         </div>
       </div>

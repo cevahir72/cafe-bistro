@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-
-type TransitionDocument = Document & {
-  startViewTransition?: (callback: () => void | Promise<void>) => void;
-};
+import { usePathname } from "next/navigation";
 
 const revealSelectors = [
   "[data-reveal]",
@@ -21,36 +18,44 @@ const revealSelectors = [
 ];
 
 export function SiteEffects() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const root = document.documentElement;
     root.classList.add("js-enhanced");
 
-    const revealNodes = Array.from(
-      new Set(
-        revealSelectors.flatMap((selector) => Array.from(document.querySelectorAll<HTMLElement>(selector)))
-      )
-    ).filter((element) => element.dataset.reveal !== "false");
+    let observer: IntersectionObserver | null = null;
+    let frameId = window.requestAnimationFrame(() => {
+      const revealNodes = Array.from(
+        new Set(
+          revealSelectors.flatMap((selector) => Array.from(document.querySelectorAll<HTMLElement>(selector)))
+        )
+      ).filter((element) => element.dataset.reveal !== "false");
 
-    revealNodes.forEach((element, index) => {
-      if (!element.classList.contains("reveal-up") && !element.hasAttribute("data-reveal")) {
-        element.classList.add("reveal-up");
+      revealNodes.forEach((element, index) => {
+        if (!element.classList.contains("reveal-up") && !element.hasAttribute("data-reveal")) {
+          element.classList.add("reveal-up");
+        }
+
+        element.classList.remove("is-visible");
+
+        const explicitDelay = element.dataset.revealDelay;
+        const staggerDelay = `${Math.min(index % 4, 3) * 80}ms`;
+        element.style.setProperty("--reveal-delay", explicitDelay ?? staggerDelay);
+      });
+
+      if (mediaQuery.matches) {
+        revealNodes.forEach((element) => element.classList.add("is-visible"));
+        return;
       }
 
-      const explicitDelay = element.dataset.revealDelay;
-      const staggerDelay = `${Math.min(index % 4, 3) * 80}ms`;
-      element.style.setProperty("--reveal-delay", explicitDelay ?? staggerDelay);
-    });
-
-    if (mediaQuery.matches) {
-      revealNodes.forEach((element) => element.classList.add("is-visible"));
-    } else {
-      const observer = new IntersectionObserver(
+      observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
+              observer?.unobserve(entry.target);
             }
           });
         },
@@ -60,58 +65,15 @@ export function SiteEffects() {
         }
       );
 
-      revealNodes.forEach((element) => observer.observe(element));
-
-      const handleLinkTransition = (event: MouseEvent) => {
-        if (event.defaultPrevented || event.button !== 0) {
-          return;
-        }
-
-        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
-          return;
-        }
-
-        const anchor = (event.target as Element | null)?.closest("a") as HTMLAnchorElement | null;
-
-        if (!anchor || !anchor.href || anchor.target === "_blank" || anchor.hasAttribute("download")) {
-          return;
-        }
-
-        const url = new URL(anchor.href, window.location.href);
-
-        if (url.origin !== window.location.origin) {
-          return;
-        }
-
-        if (url.pathname === window.location.pathname && url.hash) {
-          return;
-        }
-
-        const startViewTransition = (document as TransitionDocument).startViewTransition;
-
-        if (!startViewTransition) {
-          return;
-        }
-
-        event.preventDefault();
-        startViewTransition(() => {
-          window.location.href = url.toString();
-        });
-      };
-
-      document.addEventListener("click", handleLinkTransition);
-
-      return () => {
-        observer.disconnect();
-        document.removeEventListener("click", handleLinkTransition);
-        root.classList.remove("js-enhanced");
-      };
-    }
+      revealNodes.forEach((element) => observer?.observe(element));
+    });
 
     return () => {
+      window.cancelAnimationFrame(frameId);
+      observer?.disconnect();
       root.classList.remove("js-enhanced");
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

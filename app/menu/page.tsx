@@ -17,7 +17,7 @@ function getSection(sectionId: string): MenuSection {
   const section = menuSectionMap.get(sectionId);
 
   if (!section) {
-    throw new Error(`Unknown menu section: ${sectionId}`);
+    throw new Error(`Bilinmeyen menü bölümü: ${sectionId}`);
   }
 
   return section;
@@ -82,6 +82,10 @@ function MeatMenuItems({ items }: { items: MenuItem[] }) {
 function renderMenuGroup(group: MenuSectionGroup) {
   if (group.layout === "showcase") {
     const section = getSection(group.sectionIds[0]);
+
+    if (!section.image) {
+      throw new Error(`Görseli olmayan menü bölümü: ${section.id}`);
+    }
 
     return (
       <section className="mx-auto grid max-w-[1440px] grid-cols-1 items-start gap-16 px-6 py-24 lg:grid-cols-12 md:px-margin-page" id={section.id} key={group.id}>
@@ -201,7 +205,7 @@ export default function MenuPage() {
         <section className="relative flex h-[450px] items-center justify-center overflow-hidden" data-reveal>
           <div className="absolute inset-0 z-0">
             <SiteImage
-              alt="Atmospheric dining room"
+              alt="Atmosferik yemek salonu"
               className="h-full w-full object-cover opacity-30 grayscale-[20%]"
               priority
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPToMGLOMHNgwTy7-S-N5rXKdSXEiP3TMEXCeH1rYy6wRLSwFmau0p62sfEI3XfV-v67HwL9byJVWHj4wLmE7qdxfQr_n6wai15z67tt1vz8KRSeuZvqc7i0g7yhNpG12RaOzKS282yQOPjBoen5hE6RiPelEGyh-D51vKhKssHzfs0uE1W25Ej5F-pDf3Qh9lt80zLo-2pES1huv2Dkh1zMHHLIRY56AulO76Uk6pDJJhtAES_N_XRpgiA5-TAbE1KJ6Yqdpx0qs"
