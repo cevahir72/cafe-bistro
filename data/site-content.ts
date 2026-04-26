@@ -71,22 +71,22 @@ export type GalleryItem = {
 };
 
 export const navItems: NavItem[] = [
-  { label: "Home", href: "/", match: "/" },
-  { label: "Menu", href: "/menu", match: "/menu" },
-  { label: "Gallery", href: "/gallery", match: "/gallery" },
-  { label: "About", href: "/#story" },
+  { label: "Ana Sayfa", href: "/", match: "/" },
+  { label: "Menü", href: "/menu", match: "/menu" },
+  { label: "Galeri", href: "/gallery", match: "/gallery" },
+  { label: "Hakkımızda", href: "/#story" },
 ];
 
 export const footerLinks: FooterLink[] = [
-  { label: "Contact Us", href: "#" },
-  { label: "Privacy Policy", href: "#" },
+  { label: "Bize Ulaşın", href: "#" },
+  { label: "Gizlilik Politikası", href: "#" },
   { label: "Instagram", href: "#" },
   { label: "Facebook", href: "#" },
 ];
 
 export const businessInfo: BusinessInfo = {
   name: "Botanica Garden",
-  tagline: "High-end cafe, restaurant, and bakery experience in a moonlit botanical setting.",
+  tagline: "Ay ışığı altındaki botanik atmosferde üst segment kafe, restoran ve fırın deneyimi.",
   phone: "+44 20 7946 0123",
   email: "hello@botanicagarden.com",
   addressLine: "128 Greenhouse Lane, London, W1 2BN",
@@ -104,19 +104,19 @@ export const footerAddress = businessInfo.addressLine;
 
 export const menuHighlights: MenuItem[] = [
   {
-    name: "Stone-Fired Truffle Flatbread",
+    name: "Taş Fırında Trüflü Flatbread",
     price: "$24",
-    description: "Wild forest mushrooms, black truffle oil, and house-made ricotta from our firin.",
+    description: "Yabani orman mantarları, siyah trüf yağı ve fırınımızdan çıkan ev yapımı ricotta ile hazırlanır.",
   },
   {
-    name: "8-Hour Braised Ribs",
+    name: "8 Saat Pişirilmiş Kaburga",
     price: "$38",
-    description: "Slow-cooked in red wine reduction with rosemary-infused root vegetables.",
+    description: "Kırmızı şarap reduksiyonu ve biberiyeli kök sebzeler ile ağır ağır pişirilir.",
   },
   {
-    name: "Botanica Harvest Salad",
+    name: "Botanica Hasat Salatası",
     price: "$19",
-    description: "Seasonal organic greens, charred citrus, toasted pine nuts, and lemon zest.",
+    description: "Mevsimlik organik yeşillikler, közlenmiş narenciye, kavrulmuş çam fıstığı ve limon kabuğu ile servis edilir.",
   },
 ];
 
@@ -127,7 +127,7 @@ export const menuSections: MenuSection[] = [
     navLabel: "Salatalar",
     layout: "showcase",
     description:
-      "Light, crisp, and thoughtfully curated from our morning harvest. Fresh flavors from the garden.",
+      "Sabah hasadından gelen hafif, ferah ve özenle dengelenmiş tabaklar. Bahçeden ilham alan taze lezzetler.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBJ1QqjvJSN9LzsJQJXLe7kLDWjW_f-YxT63PPkSabBnbrWSCFwhf5n-gZACVg0tUE8elN8YPMBB6pfuimNNSwVEWAf9x3GrSKrqmZLNfW8fPWFCaEBSnlWNW8fyFYF9JZ6zoJg-rw5kQjooB8vqUT-2ZYMfpvKQLf8ScwV8rUMGFtoiPG14BJuwQH9ewR9QPjik3wpo8S2cMzxn0jjgI8gPp2nwms8hY1Fd3hRsIxuba_o8aY10zeSkbkXuFwB-wiOlV0YPOlYyPY",
     items: [
@@ -221,7 +221,7 @@ export const menuSections: MenuSection[] = [
   {
     id: "poultry",
     title: "Beyaz Etler",
-    eyebrow: "From the Firin & Grill",
+    eyebrow: "Fırın ve Izgaradan",
     navLabel: "Beyaz Etler",
     layout: "protein",
     items: [
@@ -305,8 +305,8 @@ export const menuSectionGroups: MenuSectionGroup[] = [
     id: "handhelds",
     layout: "paired",
     sectionIds: ["burgers", "pizzas"],
-    title: "Lounge Classics",
-    description: "Signature burgers and stone-baked pizzas rendered in a more composed, side-by-side presentation.",
+    title: "Salon Klasikleri",
+    description: "İmza burgerler ve taş fırından çıkan pizzalar, daha dengeli ve yan yana okunabilen bir düzenle sunulur.",
     surface: "low",
   },
   {
@@ -314,14 +314,14 @@ export const menuSectionGroups: MenuSectionGroup[] = [
     layout: "protein-pair",
     sectionIds: ["poultry", "meats"],
     title: "Beyaz & Kırmızı Etler",
-    eyebrow: "From the Firin & Grill",
-    description: "A focused pass through grilled poultry and richer red-meat plates from the main kitchen.",
+    eyebrow: "Fırın ve Izgaradan",
+    description: "Ana mutfaktan çıkan ızgara beyaz etler ve daha güçlü kırmızı et tabaklarının derli toplu seçkisi.",
   },
   {
     id: "wraps-grid",
     layout: "grid",
     sectionIds: ["wraps"],
-    description: "Late-service favorites arranged in a cleaner two-column grid for faster scanning.",
+    description: "Günün geç saatlerinde öne çıkan favoriler, daha hızlı incelenebilsin diye iki sütunlu net bir düzende yer alır.",
     surface: "low",
   },
 ];
@@ -329,11 +329,11 @@ export const menuSectionGroups: MenuSectionGroup[] = [
 export const galleryItems: GalleryItem[] = [
   {
     id: "terrace",
-    eyebrow: "Sanctuary",
-    title: "The Midnight Terrace",
+    eyebrow: "Sığınak",
+    title: "Gece Terası",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCdZLjNPOiCUZxwXEM93bQPaFmO_wxr-zd8_nIlqYC1Oto1sVgmg419XdjUxK_uR07iOYCV8Q8eld7Mf1JKt4YUcUFSZ5GS7PvrK_8UdeP86LljVfS_bA-BzqH5R6xVD8PDqfxIkqvNE7DeT-A67xcX96Qv_Zs-ucQjTHQGKVKdiqcNd--DZ_7Xx1oUgCxN8J1stIZgTrv1CxH9QBSHZfYltvPXKNFoiP5Xnlcr2GtbyV6ZyudDsEAcka-zf6j3OfUL_BciVauNhnk",
-    alt: "Luxurious evening garden terrace with warm amber lanterns hanging from ancient oak trees, soft moonlight, and plush seating areas.",
+    alt: "Eski ağaçlara asılı amber fenerler, yumuşak ay ışığı ve konforlu oturma alanlarıyla akşam saatlerinde lüks bahçe terası.",
     spanV: 3,
     spanH: 2,
     overlay: "feature",
@@ -342,7 +342,7 @@ export const galleryItems: GalleryItem[] = [
     id: "interior-detail",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuALNqohXg6L1LrgTE2t-NpacEyirdsHqT9AETsxOgNkicfyrq3LEYzeDyFhr2K62JEwdKF12BN_pomzB4CPROG_CAfc4qN1MDkPHB_VBmBZLi0gdB6q1fAFw3Gp2HDcTjUDaof7Wer0ayXwulQPexWl6h23JA45uWlzSmxCSJoulASl7z64gHLjhGtLcjp1inAvZj3Idh_kz-RIIy1_Ma6RHlZzC3uLDac4Zx3TNn_yvZrAmyK9wWIY5MNrUG0riwHrEFQO5J4lD2M",
-    alt: "Interior of a luxury lounge with dark wood paneling, brass accents, and a soft glowing fireplace in the background.",
+    alt: "Koyu ahşap kaplamalar, pirinç detaylar ve arkada yumuşak ışık veren şömineyle lüks salon iç mekanı.",
     spanV: 2,
     overlay: "soft",
     delay: "120ms",
@@ -351,7 +351,7 @@ export const galleryItems: GalleryItem[] = [
     id: "dish",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBTDsXmA7mkheFgaYhOM8PZkZhes9A4ZqB6eEUd3e6blakePFwaxHazeRIom4qe06RHbH2R9IGFdmS3Wq7SUJOYGo3XbW6JNYyGgSJMh5JLVo5o0Q3JrnfAus1-NWxmUPoMyL9zncYfpgVXbDT6v7qjfnENx39vcGH6wOHYfFMADPEutyqbz1LyU5CzuwEveoEI_IKIcT-76oB4QuoHtZCMt6-kzmcwhKvP65c1saswOwFys5CZd45BsXA1WJPLzmIbH3pmuxYkblE",
-    alt: "Exquisitely plated gourmet duck breast with vibrant berry reduction and edible flowers on a matte black ceramic plate.",
+    alt: "Mat siyah seramik tabakta meyve reduksiyonu ve yenilebilir çiçeklerle özenle sunulmuş gurme ördek göğsü.",
     spanV: 2,
     overlay: "soft",
     icon: "restaurant_menu",
@@ -359,11 +359,11 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: "great-hall",
-    eyebrow: "Atmosphere",
-    title: "The Great Hall",
+    eyebrow: "Atmosfer",
+    title: "Büyük Salon",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuD3Ft14S1KsHuXtUE79qn98uiCip8_tlfjhkjzRzbVr9pzKq0pBfeE75SQmWQhjquDISIWNuNF13MWsJWgbQ_w6GSdoDPK3xEvy9zLUrAACvdy2GrN2WXDniy4daX2694Yf-hhlTzOpr9UmI3UHkYf1mep35cnzFZ8iT8UQ0psxeL41wqKeffq3OLJKNExl14jUG1L0hw9OFcEl8WFpyhePbcn3cuUl9oRLKrVdixG9fFWgYctDeBAYO6YyzK6Urpwm9HcuNs4iVLk",
-    alt: "Wide angle shot of a high-end restaurant dining hall with dramatic floor-to-ceiling windows overlooking a moonlit garden.",
+    alt: "Ay ışığı alan bahçeye bakan tavandan tabana pencereleriyle yüksek segment restoran salonunun geniş açı görünümü.",
     spanV: 2,
     spanH: 2,
     overlay: "strong",
@@ -373,7 +373,7 @@ export const galleryItems: GalleryItem[] = [
     id: "cocktail",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuASqFZwogLcnXbt1W2Idopho5WvxjFZbac7EqYEC0CSbEMpcyvBusGAlITqbnJo2RGakALzIo8gvOkCQgPD_NS1j2bx13CCdiNyiGqGY36QAhGKvLHQEOPq95LKHTbLlhJAwRQ-Td74c91BBcuMyVJeIVKe_rLVQ8Es1G-giA6QOkf55aIvPNYmcdmHyv2Xwfs0wZ3ifM_O09dw4INe6xCqFIPisoQroBG7da-Pw2cnz1-DBONyi7lDqelmPfFvVZB001hLGss-9N8",
-    alt: "A crystal glass containing a smoky amber cocktail with a large clear ice cube and an orange twist, set on a dark wood bar.",
+    alt: "Koyu ahşap bar üzerinde büyük şeffaf buz küplü ve portakal kabuklu dumanlı amber kokteyl.",
     spanV: 3,
     overlay: "soft",
     delay: "260ms",
@@ -382,7 +382,7 @@ export const galleryItems: GalleryItem[] = [
     id: "greenery",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAmMbTTWrHoUqpJMgtewT4xedCEiq9ciwZzV6sbImER3qjWyfscdFFFXCMvoinNneZjoW_4s7aGSuRLvAKRelbdTaFzyVHrDNbFYtexpt4g9zoCpu8JBDAEX3dCeCl48YqjYg1IutfK9uhaZr62ut2TutqtUnvyzMkzsktCUiq-5Z1wiJX5cM8yotfR3eB6xR6LQFjDz89E8g--IwGB9els6QiDDHA-QIUDwZNsK3KKScZhwgGuF-82K3EjZtqvb9oGDn-yRxtUspw",
-    alt: "Close-up of exotic deep green tropical leaves with glistening dew drops under soft spotlighting.",
+    alt: "Yumuşak spot ışığı altında çiy damlalarıyla parlayan egzotik koyu yeşil tropik yaprakların yakın planı.",
     spanV: 2,
     overlay: "soft",
     delay: "320ms",
@@ -390,16 +390,16 @@ export const galleryItems: GalleryItem[] = [
 ];
 
 export const reservationSlots = [
-  "18:00 - Early Dinner",
-  "19:30 - Sunset Seating",
-  "21:00 - Nightfall",
-  "22:30 - Late Lounge",
+  "18:00 - Erken Akşam Yemeği",
+  "19:30 - Gün Batımı Servisi",
+  "21:00 - Gece Servisi",
+  "22:30 - Geç Saat Oturumu",
 ];
 
 export const openingHours = [
-  { day: "Mon - Thu", hours: "17:00 - 00:00" },
-  { day: "Fri - Sat", hours: "17:00 - 02:00" },
-  { day: "Sunday", hours: "12:00 - 22:00" },
+  { day: "Pzt - Per", hours: "17:00 - 00:00" },
+  { day: "Cum - Cts", hours: "17:00 - 02:00" },
+  { day: "Pazar", hours: "12:00 - 22:00" },
 ];
 
 export const contactDetails = [

@@ -210,8 +210,8 @@ export default function MenuPage() {
           </div>
 
           <div className="relative z-10 px-6 text-center">
-            <span className="mb-4 block font-label-md uppercase tracking-[0.4em] text-primary">The Culinary Collection</span>
-            <h1 className="mb-6 font-headline-xl text-on-surface">Epicurean Journey</h1>
+            <span className="mb-4 block font-label-md uppercase tracking-[0.4em] text-primary">Mutfak Seçkisi</span>
+            <h1 className="mb-6 font-headline-xl text-on-surface">Lezzet Yolculuğu</h1>
             <div className="mx-auto h-px w-24 bg-primary/40" />
           </div>
         </section>
@@ -229,9 +229,9 @@ export default function MenuPage() {
         {menuSectionGroups.map(renderMenuGroup)}
 
         <section className="mx-auto max-w-4xl border-t border-primary/10 px-6 py-24 text-center">
-          <h2 className="mb-8 font-headline-md italic text-on-surface">&quot;A garden is a grand teacher. It teaches patience and careful watchfulness; it teaches industry and thrift; above all it teaches entire trust.&quot;</h2>
+          <h2 className="mb-8 font-headline-md italic text-on-surface">&quot;Bahçe büyük bir öğretmendir; sabrı, dikkati, emeği ve hepsinden öte güvenmeyi öğretir.&quot;</h2>
           <Link className="border border-primary px-12 py-4 font-label-md uppercase tracking-[0.2em] text-primary transition-all duration-500 glow-button copper-glow hover:bg-primary hover:text-on-primary-fixed" href="/reservations">
-            Book Your Experience
+            Deneyiminizi Rezerve Edin
           </Link>
         </section>
       </main>

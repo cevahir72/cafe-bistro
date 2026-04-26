@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     default: "Botanica Garden",
     template: "%s | Botanica Garden",
   },
-  description: "High-end cafe, restaurant, and bakery experience with an atmospheric premium dining aesthetic.",
+  description: "Botanica Garden'da atmosferik premium yemek deneyimi, kafe, restoran ve fırın lezzetleri bir arada sunulur.",
   applicationName: "Botanica Garden",
   alternates: {
     canonical: "/",
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_GB",
+    locale: "tr_TR",
     siteName: "Botanica Garden",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Botanica Garden premium dining preview",
+        alt: "Botanica Garden premium mekan önizlemesi",
       },
     ],
   },
@@ -68,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="tr"
       className={`${bodyFont.variable} ${displayFont.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>

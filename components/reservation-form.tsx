@@ -27,7 +27,7 @@ export function ReservationForm({ slots }: ReservationFormProps) {
     const notes = String(formData.get("notes") ?? "").trim();
 
     if (!date || !time || !guests || !fullName) {
-      setError("Please complete the required reservation fields.");
+      setError("Lütfen zorunlu rezervasyon alanlarını doldurun.");
       return;
     }
 
@@ -44,7 +44,7 @@ export function ReservationForm({ slots }: ReservationFormProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="flex flex-col gap-2">
             <label className="font-label-md uppercase tracking-widest text-on-surface-variant" htmlFor="reservation-date">
-              Select Date
+              Tarih Seçin
             </label>
             <div className="relative">
               <input className="w-full border-b border-outline-variant bg-surface-container-high px-4 py-4 font-body-md text-on-surface transition-all" id="reservation-date" name="date" required type="date" />
@@ -52,11 +52,11 @@ export function ReservationForm({ slots }: ReservationFormProps) {
           </div>
           <div className="flex flex-col gap-2">
             <label className="font-label-md uppercase tracking-widest text-on-surface-variant" htmlFor="reservation-time">
-              Preferred Time
+              Tercih Edilen Saat
             </label>
             <select className="w-full appearance-none border-b border-outline-variant bg-surface-container-high px-4 py-4 font-body-md text-on-surface transition-all" defaultValue="" id="reservation-time" name="time" required>
               <option disabled value="">
-                Choose a slot
+                Saat seçin
               </option>
               {slots.map((slot) => (
                 <option key={slot} value={slot}>
@@ -70,30 +70,30 @@ export function ReservationForm({ slots }: ReservationFormProps) {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="flex flex-col gap-2">
             <label className="font-label-md uppercase tracking-widest text-on-surface-variant" htmlFor="reservation-guests">
-              Number of Guests
+              Kişi Sayısı
             </label>
-            <input className="w-full border-b border-outline-variant bg-surface-container-high px-4 py-4 font-body-md text-on-surface transition-all" id="reservation-guests" max="12" min="1" name="guests" placeholder="2 Guests" required type="number" />
+            <input className="w-full border-b border-outline-variant bg-surface-container-high px-4 py-4 font-body-md text-on-surface transition-all" id="reservation-guests" max="12" min="1" name="guests" placeholder="2 Kişi" required type="number" />
           </div>
           <div className="flex flex-col gap-2">
             <label className="font-label-md uppercase tracking-widest text-on-surface-variant" htmlFor="reservation-name">
-              Full Name
+              Ad Soyad
             </label>
-            <input className="w-full border-b border-outline-variant bg-surface-container-high px-4 py-4 font-body-md text-on-surface transition-all" id="reservation-name" name="fullName" placeholder="Your name" required type="text" />
+            <input className="w-full border-b border-outline-variant bg-surface-container-high px-4 py-4 font-body-md text-on-surface transition-all" id="reservation-name" name="fullName" placeholder="Adınız Soyadınız" required type="text" />
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
           <label className="font-label-md uppercase tracking-widest text-on-surface-variant" htmlFor="reservation-notes">
-            Special Requests
+            Özel Talepler
           </label>
-          <textarea className="w-full resize-none border-b border-outline-variant bg-surface-container-high px-4 py-4 font-body-md text-on-surface transition-all" id="reservation-notes" name="notes" placeholder="Dietary requirements or celebration notes..." rows={3} />
+          <textarea className="w-full resize-none border-b border-outline-variant bg-surface-container-high px-4 py-4 font-body-md text-on-surface transition-all" id="reservation-notes" name="notes" placeholder="Beslenme tercihleri veya kutlama notları..." rows={3} />
         </div>
 
         {error && <p className="font-body-md text-sm text-red-300">{error}</p>}
 
         <div className="pt-4">
           <button className="matte-to-sheen flex w-full items-center justify-center gap-3 rounded-sm py-6 font-label-md uppercase tracking-[0.2em] text-on-primary" disabled={isPending} type="submit">
-            {isPending ? "Confirming..." : "Confirm Reservation"}
+            {isPending ? "Onaylanıyor..." : "Rezervasyonu Onayla"}
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
           </button>
         </div>
@@ -101,10 +101,10 @@ export function ReservationForm({ slots }: ReservationFormProps) {
 
       {confirmation && (
         <div className="rounded-lg border border-primary/20 bg-surface-container-high p-6">
-          <p className="mb-3 font-label-md uppercase tracking-[0.2em] text-primary">Reservation Confirmed</p>
-          <p className="font-body-lg text-on-surface">{confirmation.fullName}, your table request for {confirmation.guests} guest{confirmation.guests === "1" ? "" : "s"} has been recorded.</p>
-          <p className="mt-3 font-body-md text-on-surface-variant">{confirmation.date} at {confirmation.time}</p>
-          {confirmation.notes && <p className="mt-2 font-body-md text-on-surface-variant">Notes: {confirmation.notes}</p>}
+          <p className="mb-3 font-label-md uppercase tracking-[0.2em] text-primary">Rezervasyonunuz Alındı</p>
+          <p className="font-body-lg text-on-surface">{confirmation.fullName}, {confirmation.guests} kişilik masa talebiniz kayda alındı.</p>
+          <p className="mt-3 font-body-md text-on-surface-variant">{confirmation.date} tarihinde {confirmation.time} için talep oluşturuldu.</p>
+          {confirmation.notes && <p className="mt-2 font-body-md text-on-surface-variant">Not: {confirmation.notes}</p>}
         </div>
       )}
     </div>

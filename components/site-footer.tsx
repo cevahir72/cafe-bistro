@@ -12,8 +12,8 @@ export function SiteFooter({ showAddress = false }: SiteFooterProps) {
       <div className="mx-auto grid w-full max-w-360 gap-10 px-6 py-16 md:px-12 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="overflow-hidden rounded-2xl border border-[#C58E4E]/12 bg-surface-container-high glass-panel reveal-up">
           <div className="border-b border-[#C58E4E]/10 px-6 py-5">
-            <p className="font-label-md uppercase tracking-[0.28em] text-primary">Find Us Faster</p>
-            <h2 className="mt-2 font-headline-md text-white">Interactive Location Map</h2>
+            <p className="font-label-md uppercase tracking-[0.28em] text-primary">Bizi Kolayca Bulun</p>
+            <h2 className="mt-2 font-headline-md text-white">İnteraktif Konum Haritası</h2>
           </div>
           <div className="grid gap-0 md:grid-cols-[1.1fr_0.9fr]">
             <iframe
@@ -55,7 +55,7 @@ export function SiteFooter({ showAddress = false }: SiteFooterProps) {
               </Link>
             ))}
           </div>
-          <div className="font-serif text-sm tracking-normal text-stone-400 reveal-up reveal-stagger-3">© 2026 {businessInfo.name}. All rights reserved.</div>
+          <div className="font-serif text-sm tracking-normal text-stone-400 reveal-up reveal-stagger-3">© 2026 {businessInfo.name}. Tüm hakları saklıdır.</div>
         </div>
       </div>
     </footer>

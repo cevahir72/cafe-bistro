@@ -47,14 +47,14 @@ export function SiteHeader({ currentPath, reserveMode = "button" }: SiteHeaderPr
                 : "font-medium uppercase text-xs tracking-widest text-stone-400 transition-all duration-300 ease-in-out hover:text-[#C58E4E] glow-hover"}
               href="/reservations"
             >
-              Reserve Now
+              Rezervasyon
             </Link>
           )}
         </div>
 
         {reserveMode === "button" && (
           <Link className="bg-primary-container px-8 py-3 font-label-md uppercase tracking-widest text-on-primary-container copper-gradient glow-button transition-all duration-300 hover:bg-opacity-90 copper-glow" href="/reservations">
-            Reserve Now
+            Rezervasyon
           </Link>
         )}
       </nav>
