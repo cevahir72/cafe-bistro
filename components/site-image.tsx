@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 type SiteImageProps = {
   alt: string;
-  src: string;
+  src: string | StaticImageData;
   className?: string;
   priority?: boolean;
   loading?: "eager" | "lazy";

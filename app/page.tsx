@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import bannerGarden from "@/assets/images/home/banner-garden.png";
+import storyImage from "@/assets/images/home/story.png";
 import { SiteImage } from "@/components/site-image";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -90,7 +92,7 @@ export default function Home() {
       <main>
         <section className="relative flex h-screen items-center justify-center overflow-hidden" data-reveal>
           <div className="absolute inset-0 z-0">
-            <SiteImage alt="Botanica Garden giriş görseli" className="h-full w-full object-cover" priority src="https://lh3.googleusercontent.com/aida/ADBb0uj_youqQPJMkw-ATU3G_KnrSQrHQga8DcQexUYWRnPlGCN1LxXxNDN6FIyY7JeKwa4LlGn-szoK3VC80oLYTUE2hisiuZZzQPozJJ_o4wzFd1ss-mlbIrOUNWP2gUrC6-mbcDEwYa6f-uK8lj5E45uzkSXPkPUhKz6_YbmVfOi06ZH4KIbAKskBpZ5ZLgSt25ozXClMSnPONpknRGNwd_E-LdbFIxdSmhrt8ukcialVTE6hKC2TAa3e2fE2ISp-nw7B5zq9_67RWQ" />
+            <SiteImage alt="Botanica Garden giriş görseli" className="h-full w-full object-cover" priority src={bannerGarden} />
             <div className="absolute inset-0 bg-linear-to-b from-[#121212]/80 via-transparent to-[#121212]" />
           </div>
           <div className="relative z-10 max-w-4xl px-gutter text-center">
@@ -108,7 +110,7 @@ export default function Home() {
         <section className="bg-surface px-6 py-32 md:px-12" id="story">
           <div className="mx-auto grid max-w-360 items-center gap-24 md:grid-cols-2">
             <div className="relative reveal-up">
-              <div className="copper-border border p-4"><SiteImage alt="Mekan iç detayları" className="aspect-4/5 h-full w-full object-cover grayscale-[0.2]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEQ4fq9bJ6-U0UVFfSVg2RxVjk_qcEqAD_Cm8TRr_6qWqRVD8uZMnf8tpCktY4rISPUPVqMFG8YNg9L-R-h3606lfpx-59DmPKqmlBFIj_0P4NIMBFCSl7MTiZpCJcJil3ekX8J0r1IiVtX4Moh7rLYbDmBIbRmffad7oIzjfdpS9jHV5Wtg-VzmAmsIaNyWL_mEpWwgK4maAe4q7rjSglgA2MaltIrLBFMKowR1py-qfdbwHOUUciNzrAQkGdhzAUNO0dC5gHfDM" /></div>
+              <div className="copper-border border p-4"><SiteImage alt="Mekan iç detayları" className="aspect-4/5 h-full w-full object-cover grayscale-[0.2]" src={storyImage} /></div>
               <div className="absolute -bottom-12 -right-12 hidden w-64 border border-primary/20 bg-surface-container p-6 lg:block glass-panel"><p className="mb-2 font-headline-md italic text-primary">Kuruluş 2024</p><p className="font-body-md text-sm text-on-surface-variant">Seçilmiş malzemeler, toprakla zarafeti buluşturan hikayemizi anlatır.</p></div>
             </div>
             <div className="space-y-8">
